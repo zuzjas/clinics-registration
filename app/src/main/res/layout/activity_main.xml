@@ -5,7 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_margin="25dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Liczba wolnych terminow: " />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Liczba zajetych terminow: " />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Liczba lekarzy: " />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Liczba specjalizacji: " />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonUmowWizyte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umow wizyte"
+        android:layout_gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,39 +50,44 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Zarzadaj wizytami"
-            />
+            android:text="@string/back"
+            android:background="@null"
+            android:textStyle="bold"
+            android:onClick="previousDayAction"
+            android:textSize="20sp"
+            android:layout_marginRight="35dp"/>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/dateTodayTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="13/11/2022"
+            android:textSize="20dp"
+            android:layout_gravity="center"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Liczba wolnych terminow: "
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Liczba zajetych terminow: "
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Liczba lekarzy: "
-                />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Liczba specjalizacji: "
-                />
-        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forward"
+            android:background="@null"
+            android:textStyle="bold"
+            android:onClick="nextDayAction"
+            android:textSize="20sp"
+            android:layout_marginLeft="40dp"
+            android:layout_gravity="right"/>
     </LinearLayout>
-    <CalendarView
-        android:layout_width="wrap_content"
+
+    <TextView
+        android:id="@+id/dayOfWeekTV"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        />
+        android:text="NIEDZIELA"
+        android:textAlignment="center"
+        android:textSize="18sp"/>
+
+    <ListView
+        android:id="@+id/hourLV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>
