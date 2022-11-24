@@ -1,31 +1,22 @@
 package com.example.clinics_registration;
 
-import static com.example.clinics_registration.CalendarUtils.monthDayFromDate;
 import static com.example.clinics_registration.CalendarUtils.selectedDate;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.sql.Time;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.clinics_registration.databinding.ActivityMainBindingImpl;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.chrono.ChronoLocalDate;
-import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,10 +25,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView dayOfWeekTV;
     private ListView hourLV;
 
+    public int doctorsNum = 15;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActivityMainBindingImpl binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.setDoctorsNum(doctorsNum);
+
         initWidgets();
         CalendarUtils.selectedDate = LocalDate.now();
 
