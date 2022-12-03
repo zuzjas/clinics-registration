@@ -1,0 +1,38 @@
+body {
+	background-color: #6200EE;
+}
+
+#main_div {
+	background-color: #FFFFFF;
+	height: 900px;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#calendar_div {
+	height: 50px;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#header {
+	background-color: #6200EE;
+	height: 50px;
+	width: 90%;
+	margin: 0 auto;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+	color: #888;
+}
+
+.btn {
+	background-color: #6200EE;
+	color: #FFFFFF;
+	padding: 14px 28px;
+	cursor: pointer;
+	margin: 0 auto;
+}
